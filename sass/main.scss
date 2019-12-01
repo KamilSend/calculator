@@ -1,0 +1,121 @@
+@import "components";
+@import "_definitions";
+
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: lightskyblue;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#container {
+  width: 30vw;
+  height: 80vh;
+  border: 5px solid var(--color-black);
+
+  display: flex;
+  flex-direction: column;
+  box-shadow: 3px 3px 8px black;
+
+  @include respond(tab-land){
+    width: 40vw;
+  }
+
+  @include respond(tab-port){
+    width: 55vw;
+  }
+
+  @include respond(phone){
+    width: 90vw;
+  }
+}
+
+.btn_container{
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
+  background-color: var(--color-black);
+
+  .calculator_btn{
+    flex-basis: 22%;
+    height:13vh;
+    font-size: 46px;
+    border:none;
+    cursor: pointer;
+    background-color: var(--color-grey-light);
+    box-shadow: 5px 5px 2px black;
+    outline:none;
+    border-radius: 5px;
+
+
+
+    @include respond(phone-land){
+      font-size: 32px;
+    }
+
+    @include respond(phone-land){
+      height:11vh;
+    }
+
+    &:hover{
+      background-color: var(--color-grey-light-2);
+    }
+
+    &:active{
+      background-color: var(--color-grey-light);
+    }
+  }
+
+
+  button.dark{
+    background-color: var(--color-grey);
+
+    &:hover{
+      background-color: var(--color-grey-2);
+    }
+
+    &:active{
+      background-color: var(--color-grey);
+    }
+  }
+
+  button.red{
+    background-color: var(--color-red);
+
+    &:hover{
+      background-color: var(--color-red-light);
+    }
+
+    &:active{
+      background-color: var(--color-red);
+    }
+  }
+
+  #equals{
+    flex-basis:98%;
+  }
+}
+
+#calculator_input{
+  width:100%;
+  height:7vh;
+  border:5px solid var(--color-black);
+  box-shadow: 2px 2px 2px black;
+  font-size: 22px;
+  border-radius: 1px;
+
+  @include respond(phone-land){
+    height:12vh;
+  }
+};
+
