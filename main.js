@@ -30,7 +30,10 @@ let charProtection = 0;
 
 
 function result() {
-
+    if (toggle===0){
+        display.textContent = parseFloat(firstNumber);
+    }
+    else{
         if (char===16){
             display.textContent = parseFloat(firstNumber) + parseFloat(secondNumber);
         }
@@ -46,7 +49,18 @@ function result() {
         else if (char===19){
             display.textContent = parseFloat(firstNumber) / parseFloat(secondNumber);
         }
+    }
 
+    dotCounter = 0;
+    secondNumber = '';
+    char = 0;
+}
+
+function clear(){
+    display.textContent = "";
+    firstNumber='';
+    secondNumber='';
+    toggle=0;
     dotCounter = 0;
 }
 
@@ -56,7 +70,6 @@ btn1.addEventListener('click', function(){
             let holder = "1";
             firstNumber = firstNumber + holder;
             display.textContent = firstNumber;
-            console.log(firstNumber);
         }
         else{
             display.textContent = 1;
@@ -70,7 +83,6 @@ btn1.addEventListener('click', function(){
             let holder = "1";
             secondNumber = secondNumber + holder;
             display.textContent = secondNumber;
-            console.log(secondNumber);
         }
         else{
             display.textContent = 1;
@@ -78,7 +90,6 @@ btn1.addEventListener('click', function(){
             secondNumber = '1';
         }
     }
-
     charProtection = 0;
 });
 
@@ -89,7 +100,6 @@ btn2.addEventListener('click', function(){
             let holder = "2";
             firstNumber = firstNumber + holder;
             display.textContent = firstNumber;
-            console.log(firstNumber);
         }
         else{
             display.textContent = 2;
@@ -103,7 +113,6 @@ btn2.addEventListener('click', function(){
             let holder = "2";
             secondNumber = secondNumber + holder;
             display.textContent = secondNumber;
-            console.log(secondNumber);
         }
         else{
             display.textContent = 2;
@@ -459,9 +468,5 @@ btnequals.addEventListener('click', function(){
 });
 
 btnclear.addEventListener('click', function(){
-    display.textContent = "";
-    firstNumber='';
-    secondNumber='';
-    toggle=0;
-    dotCounter = 0;
+    clear();
 });

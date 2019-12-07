@@ -63,7 +63,8 @@ body {
     .btn_container .calculator_btn:hover {
       background-color: var(--color-grey-light-2); }
     .btn_container .calculator_btn:active {
-      background-color: var(--color-grey-light); }
+      background-color: var(--color-grey-light);
+      box-shadow: 3px 3px 2px black; }
   .btn_container button.dark {
     background-color: var(--color-grey); }
     .btn_container button.dark:hover {
@@ -85,7 +86,8 @@ body {
   border: 5px solid var(--color-black);
   box-shadow: 2px 2px 2px black;
   font-size: 22px;
-  border-radius: 1px; }
+  border-radius: 1px;
+  overflow: hidden; }
   @media only screen and (max-height: 450px) {
     #calculator_input {
       height: 12vh; } }
