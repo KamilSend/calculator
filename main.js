@@ -464,7 +464,16 @@ btndivision.addEventListener('click', function(){
 });
 
 btnequals.addEventListener('click', function(){
-    result();
+
+    if (secondCounter === 0){
+        charProtection = 0;
+        display.textContent = firstNumber;
+    }
+
+    else{
+        result();
+    }
+
 });
 
 btnclear.addEventListener('click', function(){

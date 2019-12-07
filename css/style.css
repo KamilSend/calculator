@@ -65,6 +65,8 @@ body {
     .btn_container .calculator_btn:active {
       background-color: var(--color-grey-light);
       box-shadow: 3px 3px 2px black; }
+    .btn_container .calculator_btn:focus {
+      background-color: red; }
   .btn_container button.dark {
     background-color: var(--color-grey); }
     .btn_container button.dark:hover {
