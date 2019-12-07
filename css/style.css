@@ -87,7 +87,8 @@ body {
   box-shadow: 2px 2px 2px black;
   font-size: 22px;
   border-radius: 1px;
-  overflow: hidden; }
+  overflow: hidden;
+  outline: none; }
   @media only screen and (max-height: 450px) {
     #calculator_input {
       height: 12vh; } }
