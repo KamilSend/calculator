@@ -21,7 +21,7 @@ body{
 
   display: flex;
   flex-direction: column;
-  box-shadow: 3px 3px 8px black;
+  box-shadow: 3px 3px 8px var(--color-black-dark);
 
   @include respond(tab-land){
     width: 40vw;

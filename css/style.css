@@ -1,5 +1,6 @@
 :root {
-  --color-black:#212121;
+  --color-black:#353535;
+  --color-black-dark:#252525;
   --color-grey:#718792;
   --color-grey-2:#91a7b2;
   --color-grey-light:#B0BEC5;
@@ -25,7 +26,7 @@ body {
   border: 5px solid var(--color-black);
   display: flex;
   flex-direction: column;
-  box-shadow: 3px 3px 8px black; }
+  box-shadow: 3px 3px 8px var(--color-black-dark); }
   @media only screen and (max-width: 1000px) {
     #container {
       width: 40vw; } }
