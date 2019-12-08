@@ -35,19 +35,48 @@ function result() {
     }
     else{
         if (char===16){
-            display.textContent = parseFloat(firstNumber) + parseFloat(secondNumber);
+            if (secondNumber===''){
+                display.textContent = parseFloat(firstNumber);
+                charProtection = 0;
+            }
+            else{
+                display.textContent = parseFloat(firstNumber) + parseFloat(secondNumber);
+            }
         }
 
         else if (char===17){
-            display.textContent = parseFloat(firstNumber) - parseFloat(secondNumber);
+            if (secondNumber===''){
+                display.textContent = parseFloat(firstNumber);
+                charProtection = 0;
+            }
+            else{
+                display.textContent = parseFloat(firstNumber) - parseFloat(secondNumber);
+            }
         }
 
         else if (char===18){
-            display.textContent = parseFloat(firstNumber) * parseFloat(secondNumber);
+            if (secondNumber===''){
+                display.textContent = parseFloat(firstNumber);
+                charProtection = 0;
+            }
+            else{
+                display.textContent = parseFloat(firstNumber) * parseFloat(secondNumber);
+            }
         }
 
         else if (char===19){
-            display.textContent = parseFloat(firstNumber) / parseFloat(secondNumber);
+            if (secondNumber===''){
+                display.textContent = parseFloat(firstNumber);
+                charProtection = 0;
+            }
+            else{
+                if (parseFloat(secondNumber) === 0){
+                    alert('Nie można dzielić przez 0');
+                }
+                else{
+                    display.textContent = parseFloat(firstNumber) / parseFloat(secondNumber);
+                }
+            }
         }
     }
 
