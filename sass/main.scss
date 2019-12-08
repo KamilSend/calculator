@@ -74,10 +74,6 @@ body{
       background-color: var(--color-grey-light);
       box-shadow: 3px 3px 2px black;
     }
-
-    &:focus{
-      background-color: red;
-    }
   }
 
 
@@ -100,7 +96,7 @@ body{
       background-color: var(--color-red-light);
     }
 
-    &:active{
+    &:focus{
       background-color: var(--color-red);
     }
   }

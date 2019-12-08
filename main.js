@@ -87,10 +87,15 @@ function result() {
 
 function clear(){
     display.textContent = "";
-    firstNumber='';
+    firstNumber='0';
     secondNumber='';
     toggle=0;
     dotCounter = 0;
+    charProtection = 0;
+
+    char = 0;
+    counter= 0;
+    secondCounter= 0;
 }
 
 btn1.addEventListener('click', function(){
@@ -449,7 +454,22 @@ btnsubtraction.addEventListener('click', function(){
 
         char = 17;
     }
-    charProtection = 1;
+
+    else if (charProtection === 1){
+        if (char===16){
+            char=17;
+            display.textContent = '-';
+        }
+        else{
+            firstNumber = firstNumber * -1;
+            display.textContent = '-';
+        }
+    }
+    charProtection = 2;
+
+    if ((firstNumber==='0') || (firstNumber==='') || (firstNumber===0)) {
+        display.textContent = '-';
+    }
 
 });
 
