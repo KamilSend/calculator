@@ -1,14 +1,3 @@
-const btn1 = document.getElementById('one');
-const btn2 = document.getElementById('two');
-const btn3 = document.getElementById('three');
-const btn4 = document.getElementById('four');
-const btn5 = document.getElementById('five');
-const btn6 = document.getElementById('six');
-const btn7 = document.getElementById('seven');
-const btn8 = document.getElementById('eight');
-const btn9 = document.getElementById('nine');
-const btn0 = document.getElementById('zero');
-
 const btn = [
     document.getElementById('zero'),
     document.getElementById('one'),
@@ -33,15 +22,14 @@ const display = document.querySelector('button:nth-child(1)');
 
 let firstNumber ='0';
 let secondNumber = 0;
-let toggle=0;
-let char=0;
-let counter= 0;
+let toggle=0;//wprowadzanie pierwszej lub drugiej liczby
+let char=0;//określa rodzaj działania, kropke lub wyzerowanie
+let counter= 0;//umożliwiają wielocyfrowe liczby
 let secondCounter= 0;
-let dotCounter=0;
-let charProtection = 0;
+let dotCounter=0;//uniemożliwia wciśnięcie kropki więcej niż raz
+let charProtection = 0;//uniemożliwia wciśnięcie dwa razy działania
 
 //11,12,13,14,15,16 CE, X, /, ., -, +
-
 
 function result() {
     if (toggle===0){
