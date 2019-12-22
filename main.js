@@ -34,37 +34,36 @@ function result() {
         display.textContent = parseFloat(firstNumber);
     }
     else{
-        if (char===16){
-            if (makeSecondNumber()){}
-            else{
-                display.textContent = parseFloat(firstNumber) + parseFloat(secondNumber);
-            }
-        }
-
-        else if (char===17){
-            if (makeSecondNumber()){}
-            else{
-                display.textContent = parseFloat(firstNumber) - parseFloat(secondNumber);
-            }
-        }
-
-        else if (char===18){
-            if (makeSecondNumber()){}
-            else{
-                display.textContent = parseFloat(firstNumber) * parseFloat(secondNumber);
-            }
-        }
-
-        else if (char===19){
-            if (makeSecondNumber()){}
-            else{
-                if (parseFloat(secondNumber) === 0){
-                    alert('Nie można dzielić przez 0');
-                }
+        switch (char){
+            case 16:
+                if (makeSecondNumber()){}
                 else{
-                    display.textContent = parseFloat(firstNumber) / parseFloat(secondNumber);
+                    display.textContent = parseFloat(firstNumber) + parseFloat(secondNumber);
                 }
-            }
+                break;
+            case 17:
+                if (makeSecondNumber()){}
+                else{
+                    display.textContent = parseFloat(firstNumber) - parseFloat(secondNumber);
+                }
+                break;
+            case 18:
+                if (makeSecondNumber()){}
+                else{
+                    display.textContent = parseFloat(firstNumber) * parseFloat(secondNumber);
+                }
+                break;
+            case 19:
+                if (makeSecondNumber()){}
+                else{
+                    if (parseFloat(secondNumber) === 0){
+                        alert('Nie można dzielić przez 0');
+                    }
+                    else{
+                        display.textContent = parseFloat(firstNumber) / parseFloat(secondNumber);
+                    }
+                }
+                break;
         }
     }
 
