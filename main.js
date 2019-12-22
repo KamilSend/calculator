@@ -8,6 +8,20 @@ const btn7 = document.getElementById('seven');
 const btn8 = document.getElementById('eight');
 const btn9 = document.getElementById('nine');
 const btn0 = document.getElementById('zero');
+
+const btn = [
+    document.getElementById('zero'),
+    document.getElementById('one'),
+    document.getElementById('two'),
+    document.getElementById('three'),
+    document.getElementById('four'),
+    document.getElementById('five'),
+    document.getElementById('six'),
+    document.getElementById('seven'),
+    document.getElementById('eight'),
+    document.getElementById('nine')
+];
+
 const btndot = document.getElementById('dot');
 const btnplus = document.getElementById('plus');
 const btnmultiplication = document.getElementById('multiplication');
@@ -127,45 +141,12 @@ function number(digit){
     }
     charProtection = 0;
 }
-btn1.addEventListener('click', function(){
-    number(1);
-});
 
-btn2.addEventListener('click', function(){
-    number(2);
-});
-
-btn3.addEventListener('click', function(){
-    number(3);
-});
-
-btn4.addEventListener('click', function(){
-    number(4);
-});
-
-btn5.addEventListener('click', function(){
-    number(5);
-});
-
-btn6.addEventListener('click', function(){
-    number(6);
-});
-
-btn7.addEventListener('click', function(){
-    number(7);
-});
-
-btn8.addEventListener('click', function(){
-    number(8);
-});
-
-btn9.addEventListener('click', function(){
-    number(9);
-});
-
-btn0.addEventListener('click', function(){
-    number(0);
-});
+for (let i=0; i<=9; i++){
+    btn[i].addEventListener('click', function(){
+        number(i);
+    });
+}
 
 btndot.addEventListener('click', function(){
 
