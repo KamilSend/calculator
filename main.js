@@ -31,46 +31,43 @@ let charProtection = 0;//uniemożliwia wciśnięcie dwa razy działania
 
 //11,12,13,14,15,16 CE, X, /, ., -, +
 
+function makeSecondNumber(){
+    if (secondNumber===''){
+        display.textContent = parseFloat(firstNumber);
+        charProtection = 0;
+        return 1;
+    }
+    else return 0;
+}
+
 function result() {
     if (toggle===0){
         display.textContent = parseFloat(firstNumber);
     }
     else{
         if (char===16){
-            if (secondNumber===''){
-                display.textContent = parseFloat(firstNumber);
-                charProtection = 0;
-            }
+            if (makeSecondNumber()){}
             else{
                 display.textContent = parseFloat(firstNumber) + parseFloat(secondNumber);
             }
         }
 
         else if (char===17){
-            if (secondNumber===''){
-                display.textContent = parseFloat(firstNumber);
-                charProtection = 0;
-            }
+            if (makeSecondNumber()){}
             else{
                 display.textContent = parseFloat(firstNumber) - parseFloat(secondNumber);
             }
         }
 
         else if (char===18){
-            if (secondNumber===''){
-                display.textContent = parseFloat(firstNumber);
-                charProtection = 0;
-            }
+            if (makeSecondNumber()){}
             else{
                 display.textContent = parseFloat(firstNumber) * parseFloat(secondNumber);
             }
         }
 
         else if (char===19){
-            if (secondNumber===''){
-                display.textContent = parseFloat(firstNumber);
-                charProtection = 0;
-            }
+            if (makeSecondNumber()){}
             else{
                 if (parseFloat(secondNumber) === 0){
                     alert('Nie można dzielić przez 0');
