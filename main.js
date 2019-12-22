@@ -98,295 +98,73 @@ function clear(){
     secondCounter= 0;
 }
 
-btn1.addEventListener('click', function(){
+
+function number(digit){
     if (toggle===0){
         if (counter === 1) {
-            let holder = "1";
+            let holder = digit.toString();
             firstNumber = firstNumber + holder;
             display.textContent = firstNumber;
         }
         else{
-            display.textContent = 1;
+            display.textContent = digit;
             counter = 1;
-            firstNumber = '1';
+            firstNumber = digit;
         }
     }
 
     else {
         if (secondCounter === 1) {
-            let holder = "1";
+            let holder = digit.toString();
             secondNumber = secondNumber + holder;
             display.textContent = secondNumber;
         }
         else{
-            display.textContent = 1;
+            display.textContent = digit;
             secondCounter = 1;
-            secondNumber = '1';
+            secondNumber = digit.toString();
         }
     }
     charProtection = 0;
+}
+btn1.addEventListener('click', function(){
+    number(1);
 });
 
-
 btn2.addEventListener('click', function(){
-    if (toggle===0){
-        if (counter === 1) {
-            let holder = "2";
-            firstNumber = firstNumber + holder;
-            display.textContent = firstNumber;
-        }
-        else{
-            display.textContent = 2;
-            counter = 1;
-            firstNumber = '2';
-        }
-    }
-
-    else {
-        if (secondCounter === 1) {
-            let holder = "2";
-            secondNumber = secondNumber + holder;
-            display.textContent = secondNumber;
-        }
-        else{
-            display.textContent = 2;
-            secondCounter = 1;
-            secondNumber = '2';
-        }
-    }
-    charProtection = 0;
+    number(2);
 });
 
 btn3.addEventListener('click', function(){
-    if (toggle===0){
-        if (counter === 1) {
-            let holder = "3";
-            firstNumber = firstNumber + holder;
-            display.textContent = firstNumber;
-        }
-        else{
-            display.textContent = 3;
-            counter = 1;
-            firstNumber = '3';
-        }
-    }
-
-    else {
-        if (secondCounter === 1) {
-            let holder = "3";
-            secondNumber = secondNumber + holder;
-            display.textContent = secondNumber;
-        }
-        else{
-            display.textContent = 3;
-            secondCounter = 1;
-            secondNumber = '3';
-        }
-    }
-    charProtection = 0;
+    number(3);
 });
 
 btn4.addEventListener('click', function(){
-    if (toggle===0){
-        if (counter === 1) {
-            let holder = "4";
-            firstNumber = firstNumber + holder;
-            display.textContent = firstNumber;
-        }
-        else{
-            display.textContent = 4;
-            counter = 1;
-            firstNumber = '4';
-        }
-    }
-
-    else {
-        if (secondCounter === 1) {
-            let holder = "4";
-            secondNumber = secondNumber + holder;
-            display.textContent = secondNumber;
-        }
-        else{
-            display.textContent = 4;
-            secondCounter = 1;
-            secondNumber = '4';
-        }
-    }
-    charProtection = 0;
+    number(4);
 });
 
 btn5.addEventListener('click', function(){
-    if (toggle===0){
-        if (counter === 1) {
-            let holder = "5";
-            firstNumber = firstNumber + holder;
-            display.textContent = firstNumber;
-        }
-        else{
-            display.textContent = 5;
-            counter = 1;
-            firstNumber = '5';
-        }
-    }
-
-    else {
-        if (secondCounter === 1) {
-            let holder = "5";
-            secondNumber = secondNumber + holder;
-            display.textContent = secondNumber;
-        }
-        else{
-            display.textContent = 5;
-            secondCounter = 1;
-            secondNumber = '5';
-        }
-    }
-    charProtection = 0;
+    number(5);
 });
 
 btn6.addEventListener('click', function(){
-    if (toggle===0){
-        if (counter === 1) {
-            let holder = "6";
-            firstNumber = firstNumber + holder;
-            display.textContent = firstNumber;
-        }
-        else{
-            display.textContent = 6;
-            counter = 1;
-            firstNumber = '6';
-        }
-    }
-
-    else {
-        if (secondCounter === 1) {
-            let holder = "6";
-            secondNumber = secondNumber + holder;
-            display.textContent = secondNumber;
-        }
-        else{
-            display.textContent = 6;
-            secondCounter = 1;
-            secondNumber = '6';
-        }
-    }
-    charProtection = 0;
+    number(6);
 });
 
 btn7.addEventListener('click', function(){
-    if (toggle===0){
-        if (counter === 1) {
-            let holder = "7";
-            firstNumber = firstNumber + holder;
-            display.textContent = firstNumber;
-        }
-        else{
-            display.textContent = 7;
-            counter = 1;
-            firstNumber = '7';
-        }
-    }
-
-    else {
-        if (secondCounter === 1) {
-            let holder = "7";
-            secondNumber = secondNumber + holder;
-            display.textContent = secondNumber;
-        }
-        else{
-            display.textContent = 7;
-            secondCounter = 1;
-            secondNumber = '7';
-        }
-    }
-    charProtection = 0;
+    number(7);
 });
 
 btn8.addEventListener('click', function(){
-    if (toggle===0){
-        if (counter === 1) {
-            let holder = "8";
-            firstNumber = firstNumber + holder;
-            display.textContent = firstNumber;
-        }
-        else{
-            display.textContent = 8;
-            counter = 1;
-            firstNumber = '8';
-        }
-    }
-
-    else {
-        if (secondCounter === 1) {
-            let holder = "8";
-            secondNumber = secondNumber + holder;
-            display.textContent = secondNumber;
-        }
-        else{
-            display.textContent = 8;
-            secondCounter = 1;
-            secondNumber = '8';
-        }
-    }
-    charProtection = 0;
+    number(8);
 });
 
 btn9.addEventListener('click', function(){
-    if (toggle===0){
-        if (counter === 1) {
-            let holder = "9";
-            firstNumber = firstNumber + holder;
-            display.textContent = firstNumber;
-        }
-        else{
-            display.textContent = 9;
-            counter = 1;
-            firstNumber = '9';
-        }
-    }
-
-    else {
-        if (secondCounter === 1) {
-            let holder = "9";
-            secondNumber = secondNumber + holder;
-            display.textContent = secondNumber;
-        }
-        else{
-            display.textContent = 9;
-            secondCounter = 1;
-            secondNumber = '9';
-        }
-    }
-    charProtection = 0;
+    number(9);
 });
 
 btn0.addEventListener('click', function(){
-    if (toggle===0){
-        if (counter === 1) {
-            let holder = "0";
-            firstNumber = firstNumber + holder;
-            display.textContent = firstNumber;
-        }
-        else{
-            display.textContent = 0;
-            counter = 1;
-            firstNumber = '0';
-        }
-    }
-
-    else {
-        if (secondCounter === 1) {
-            let holder = "0";
-            secondNumber = secondNumber + holder;
-            display.textContent = secondNumber;
-        }
-        else{
-            display.textContent = 0;
-            secondCounter = 1;
-            secondNumber = '0';
-        }
-    }
-    charProtection = 0;
+    number(0);
 });
 
 btndot.addEventListener('click', function(){
