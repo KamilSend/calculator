@@ -1,16 +1,4 @@
-const btn = [
-    document.getElementById('zero'),
-    document.getElementById('one'),
-    document.getElementById('two'),
-    document.getElementById('three'),
-    document.getElementById('four'),
-    document.getElementById('five'),
-    document.getElementById('six'),
-    document.getElementById('seven'),
-    document.getElementById('eight'),
-    document.getElementById('nine')
-];
-
+const btn2 = document.querySelectorAll('.number');
 const btndot = document.getElementById('dot');
 const btnplus = document.getElementById('plus');
 const btnmultiplication = document.getElementById('multiplication');
@@ -31,6 +19,7 @@ let charProtection = 0;//uniemożliwia wciśnięcie dwa razy działania
 
 //11,12,13,14,15,16 CE, X, /, ., -, +
 
+//ta funkcja sprawdza czy są już obie liczby i można wykonać działanie
 function makeSecondNumber(){
     if (secondNumber===''){
         display.textContent = parseFloat(firstNumber);
@@ -146,8 +135,14 @@ function sign(sign){
 }
 
 for (let i=0; i<=9; i++){
-    btn[i].addEventListener('click', function(){
-        number(i);
+    btn2[i].addEventListener('click', function(){
+        //potrzebny taki myk bo przyciski są pobrane w kolejności od 1-9 i dopiero 0
+        if (i===9){
+            number(0);
+        }
+         else {
+            number(i + 1);
+        }
     });
 }
 
