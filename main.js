@@ -130,6 +130,24 @@ function number(digit){
     charProtection = 0;
 }
 
+function sign(sign){
+    if(charProtection ===0){
+        if (toggle===0){
+            toggle = 1;
+        }
+
+        else {
+            result();
+            firstNumber=display.textContent;
+            secondNumber='';
+        }
+
+        char = sign;
+    }
+
+    charProtection = 1;
+}
+
 for (let i=0; i<=9; i++){
     btn[i].addEventListener('click', function(){
         number(i);
@@ -169,22 +187,8 @@ if(dotCounter===0){
 }
 
 });
-
 btnplus.addEventListener('click', function(){
-    if(charProtection === 0){
-        if (toggle===0){
-            toggle = 1;
-        }
-
-        else {
-            result();
-            firstNumber=display.textContent;
-            secondNumber='';
-        }
-
-        char = 16;
-    }
-    charProtection = 1;
+    sign(16);
 });
 
 btnsubtraction.addEventListener('click', function(){
@@ -221,42 +225,11 @@ btnsubtraction.addEventListener('click', function(){
 });
 
 btnmultiplication.addEventListener('click', function(){
-
-    if(charProtection ===0){
-        if (toggle===0){
-            toggle = 1;
-        }
-
-        else {
-            result();
-            firstNumber=display.textContent;
-            secondNumber='';
-        }
-
-        char = 18;
-    }
-
-    charProtection = 1;
-
+    sign(18);
 });
 
 btndivision.addEventListener('click', function(){
-    if(charProtection ===0){
-        if (toggle===0){
-            toggle = 1;
-        }
-
-        else {
-            result();
-            firstNumber=display.textContent;
-            secondNumber='';
-        }
-
-        char = 19;
-    }
-
-    charProtection = 1;
-
+    sign(19);
 });
 
 btnequals.addEventListener('click', function(){
