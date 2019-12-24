@@ -16,6 +16,7 @@ let counter= 0;//umożliwiają wielocyfrowe liczby
 let secondCounter= 0;
 let dotCounter=0;//uniemożliwia wciśnięcie kropki więcej niż raz
 let charProtection = 0;//uniemożliwia wciśnięcie dwa razy działania
+let minusOperator = 0;
 
 //11,12,13,14,15,16 CE, X, /, ., -, +
 
@@ -75,15 +76,16 @@ function result() {
 
 function clear(){
     display.textContent = "";
-    firstNumber='0';
-    secondNumber='';
-    toggle=0;
+    firstNumber ='0';
+    secondNumber ='';
+    toggle =0;
     dotCounter = 0;
     charProtection = 0;
 
     char = 0;
-    counter= 0;
-    secondCounter= 0;
+    counter = 0;
+    secondCounter = 0;
+    minusOperator = 0;
 }
 
 
@@ -93,13 +95,15 @@ function number(digit){
             let holder = digit.toString();//sprawdzić czy tego nie można pominąć
             if (firstNumber.length < 15){
                 firstNumber = firstNumber + holder;
-                display.textContent = firstNumber;
+                display.textContent = firstNumber.toString();
+
             }
         }
         else{
             display.textContent = digit;
             counter = 1;
             firstNumber = digit.toString();
+
         }
     }
 
@@ -108,11 +112,21 @@ function number(digit){
             let holder = digit.toString();
             if (secondNumber.length < 15) {
                 secondNumber = secondNumber + holder;
-                display.textContent = secondNumber;
+                if (minusOperator === 1) {
+                    display.textContent = -secondNumber;
+                }
+                else
+                    display.textContent = secondNumber;
             }
+
         }
         else{
-            display.textContent = digit;
+            if (minusOperator === 1){
+                display.textContent = -digit;
+            }
+            else
+                display.textContent = digit;
+
             secondCounter = 1;
             secondNumber = digit.toString();
         }
@@ -214,11 +228,11 @@ btnsubtraction.addEventListener('click', function(){
         }
     }
     charProtection = 2;
+    minusOperator = 1;
 
     if ((firstNumber==='0') || (firstNumber==='') || (firstNumber===0)) {
         display.textContent = '-';
     }
-
 });
 
 btnmultiplication.addEventListener('click', function(){
