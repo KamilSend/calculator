@@ -72,6 +72,7 @@ function result() {
     char = 0;
 }
 
+
 function clear(){
     display.textContent = "";
     firstNumber='0';
@@ -89,22 +90,26 @@ function clear(){
 function number(digit){
     if (toggle===0){
         if (counter === 1) {
-            let holder = digit.toString();
-            firstNumber = firstNumber + holder;
-            display.textContent = firstNumber;
+            let holder = digit.toString();//sprawdzić czy tego nie można pominąć
+            if (firstNumber.length < 15){
+                firstNumber = firstNumber + holder;
+                display.textContent = firstNumber;
+            }
         }
         else{
             display.textContent = digit;
             counter = 1;
-            firstNumber = digit;
+            firstNumber = digit.toString();
         }
     }
 
     else {
         if (secondCounter === 1) {
             let holder = digit.toString();
-            secondNumber = secondNumber + holder;
-            display.textContent = secondNumber;
+            if (secondNumber.length < 15) {
+                secondNumber = secondNumber + holder;
+                display.textContent = secondNumber;
+            }
         }
         else{
             display.textContent = digit;
@@ -119,6 +124,7 @@ function sign(sign){
     if(charProtection ===0){
         if (toggle===0){
             toggle = 1;
+            dotCounter = 0;
         }
 
         else {
