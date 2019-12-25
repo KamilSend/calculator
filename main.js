@@ -96,7 +96,6 @@ function number(digit){
             if (firstNumber.length < 15){
                 firstNumber = firstNumber + holder;
                 display.textContent = firstNumber.toString();
-
             }
         }
         else{
@@ -113,6 +112,9 @@ function number(digit){
             if (secondNumber.length < 15) {
                 secondNumber = secondNumber + holder;
                 if (minusOperator === 1) {
+                    if (secondNumber == 0){
+                        display.textContent = "-0";
+                    }else
                     display.textContent = -secondNumber;
                 }
                 else
@@ -122,6 +124,9 @@ function number(digit){
         }
         else{
             if (minusOperator === 1){
+                if (digit == 0){
+                    display.textContent = "-0";
+                }
                 display.textContent = -digit;
             }
             else
@@ -132,6 +137,10 @@ function number(digit){
         }
     }
     charProtection = 0;
+
+    if(digit === 0 && minusOperator === 1){
+        display.textContent = '-0';
+    }
 }
 
 function sign(sign){
@@ -146,11 +155,11 @@ function sign(sign){
             firstNumber=display.textContent;
             secondNumber='';
         }
-
         char = sign;
     }
 
     charProtection = 1;
+    minusOperator = 0;
 }
 
 for (let i=0; i<=9; i++){
@@ -175,22 +184,37 @@ if(dotCounter===0){
             display.textContent = firstNumber;
         }
         else{
-            display.textContent ='.';
-            counter = 1;
-            firstNumber = '.';
+            if (minusOperator === 1){
+                display.textContent ='-0.';
+            }
+            else
+                display.textContent ='.';
+                counter = 1;
+                firstNumber = '.';
         }
     }
 
     else {
         if (secondCounter === 1) {
+
             let holder = ".";
+            if (minusOperator === 1){
+                display.textContent ='-0.';
+            }
+            else{
+                display.textContent = '0.';
+            }
             secondNumber = secondNumber + holder;
-            display.textContent = secondNumber;
+            //display.textContent = secondNumber;
         }
         else{
-            display.textContent = '.';
-            secondCounter = 1;
-            secondNumber = '.';
+            if (minusOperator === 1){
+                display.textContent ='-0.';
+            }
+            else
+                display.textContent ='.';
+                secondCounter = 1;
+                secondNumber = '.';
         }
     }
 
