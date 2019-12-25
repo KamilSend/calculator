@@ -16,7 +16,7 @@ let counter= 0;//umożliwiają wielocyfrowe liczby
 let secondCounter= 0;
 let dotCounter=0;//uniemożliwia wciśnięcie kropki więcej niż raz
 let charProtection = 0;//uniemożliwia wciśnięcie dwa razy działania
-let minusOperator = 0;
+let minusOperator = 0;//do sprawdzenia czy wyświetlić minus przed liczbą
 
 //11,12,13,14,15,16 CE, X, /, ., -, +
 
@@ -102,7 +102,6 @@ function number(digit){
             display.textContent = digit;
             counter = 1;
             firstNumber = digit.toString();
-
         }
     }
 
@@ -120,8 +119,8 @@ function number(digit){
                 else
                     display.textContent = secondNumber;
             }
-
         }
+
         else{
             if (minusOperator === 1){
                 if (digit == 0){
@@ -136,6 +135,7 @@ function number(digit){
             secondNumber = digit.toString();
         }
     }
+
     charProtection = 0;
 
     if(digit === 0 && minusOperator === 1){
@@ -144,22 +144,20 @@ function number(digit){
 }
 
 function sign(sign){
-    if(charProtection ===0){
-        if (toggle===0){
-            toggle = 1;
-            dotCounter = 0;
+        if (charProtection === 0) {
+            if (toggle === 0) {
+                toggle = 1;
+                dotCounter = 0;
+            } else {
+                result();
+                firstNumber = display.textContent;
+                secondNumber = '';
+            }
+            char = sign;
         }
 
-        else {
-            result();
-            firstNumber=display.textContent;
-            secondNumber='';
-        }
-        char = sign;
-    }
-
-    charProtection = 1;
-    minusOperator = 0;
+        charProtection = 1;
+        minusOperator = 0;
 }
 
 for (let i=0; i<=9; i++){
@@ -174,7 +172,7 @@ for (let i=0; i<=9; i++){
     });
 }
 
-btndot.addEventListener('click', function(){
+btndot.addEventListener('click',() => {
 
 if(dotCounter===0){
     if (toggle===0){
@@ -188,9 +186,9 @@ if(dotCounter===0){
                 display.textContent ='-0.';
             }
             else
-                display.textContent ='.';
+                display.textContent ='0.';
                 counter = 1;
-                firstNumber = '.';
+                firstNumber = '0.';
         }
     }
 
@@ -204,17 +202,19 @@ if(dotCounter===0){
             else{
                 display.textContent = '0.';
             }
-            secondNumber = secondNumber + holder;
-            //display.textContent = secondNumber;
+
+            //secondNumber = secondNumber + holder;
+            secondNumber = '0.';
+
         }
         else{
             if (minusOperator === 1){
                 display.textContent ='-0.';
             }
             else
-                display.textContent ='.';
+                display.textContent ='0.';
                 secondCounter = 1;
-                secondNumber = '.';
+                secondNumber = '0.';
         }
     }
 
