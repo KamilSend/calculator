@@ -13,7 +13,7 @@ let secondNumber = 0;
 let toggle=0;//wprowadzanie pierwszej lub drugiej liczby
 let char=0;//określa rodzaj działania, kropke lub wyzerowanie
 let counter= 0;//umożliwiają wielocyfrowe liczby
-let secondCounter= 0;
+let secondCounter= 0;//sprawdza czy była wpisana druga liczba
 let dotCounter=0;//uniemożliwia wciśnięcie kropki więcej niż raz
 let charProtection = 0;//uniemożliwia wciśnięcie dwa razy działania
 let minusOperator = 0;//do sprawdzenia czy wyświetlić minus przed liczbą
@@ -48,7 +48,7 @@ function result() {
                     display.textContent = parseFloat(firstNumber) - parseFloat(secondNumber);
                 }
                 break;
-            case 18:
+            case 18://multiplication
                 if (makeSecondNumber()){}
                 else{
                     display.textContent = parseFloat(firstNumber) * parseFloat(secondNumber);
@@ -108,7 +108,7 @@ function number(digit){
     else {
         if (secondCounter === 1) {
             let holder = digit.toString();
-            if (secondNumber.length < 15) {
+            if (secondNumber.length < 16) {
                 secondNumber = secondNumber + holder;
                 if (minusOperator === 1) {
                     if (secondNumber == 0){
@@ -182,39 +182,39 @@ if(dotCounter===0){
             display.textContent = firstNumber;
         }
         else{
-            if (minusOperator === 1){
-                display.textContent ='-0.';
-            }
-            else
-                display.textContent ='0.';
-                counter = 1;
-                firstNumber = '0.';
+            let holder = ".";
+            number(0);
+            firstNumber = firstNumber + holder;
+            display.textContent = firstNumber;
         }
     }
 
     else {
         if (secondCounter === 1) {
-
             let holder = ".";
-            if (minusOperator === 1){
+            secondNumber = secondNumber + holder;
+            if(minusOperator){
                 display.textContent ='-0.';
             }
             else{
-                display.textContent = '0.';
+                display.textContent = secondNumber;
             }
-
-            //secondNumber = secondNumber + holder;
-            secondNumber = '0.';
-
         }
         else{
             if (minusOperator === 1){
                 display.textContent ='-0.';
+                let holder = ".";
+                number(0);
+                secondNumber = secondNumber + holder;
+                display.textContent = '-' + secondNumber;
             }
-            else
-                display.textContent ='0.';
-                secondCounter = 1;
-                secondNumber = '0.';
+            else{
+                let holder = ".";
+                number(0);
+                secondNumber = secondNumber + holder;
+                display.textContent = secondNumber;
+            }
+            counter = 1;
         }
     }
 
