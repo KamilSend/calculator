@@ -176,6 +176,7 @@ btndot.addEventListener('click',() => {
 
 if(dotCounter===0){
     if (toggle===0){
+        //console.log('dupa')
         if (counter === 1) {
             let holder = ".";
             firstNumber = firstNumber + holder;
@@ -190,11 +191,12 @@ if(dotCounter===0){
     }
 
     else {
+        //console.log('dupa');
         if (secondCounter === 1) {
             let holder = ".";
             secondNumber = secondNumber + holder;
             if(minusOperator){
-                display.textContent ='-0.';
+                display.textContent = '-' + secondNumber;
             }
             else{
                 display.textContent = secondNumber;
@@ -203,6 +205,7 @@ if(dotCounter===0){
         else{
             if (minusOperator === 1){
                 display.textContent ='-0.';
+                //console.log('dupa');
                 let holder = ".";
                 number(0);
                 secondNumber = secondNumber + holder;
