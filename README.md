@@ -1,7 +1,7 @@
 # Calculator
 Simple calculator made with HTML 5, CSS 3 and JavaScript ES 6. 
-##Getting started
-###Prerequisites
+## Getting started
+### Prerequisites
 To run this project locally you need to have this software installed:
 
 Node.js version 8.10 or higher
@@ -21,16 +21,16 @@ Live server version 1.2.1 or higher
 ```
 npm install -g live-server
 ```
-###Installing and launching
+### Installing and launching
 * Clone repository
 * Run ```npm install```
 * You can start the project now using ```npm run start```
-##Built With
+## Built With
 * HTML 5
 * CSS 3 (With SASS preprocessor)
 * JavaScript
-##Authors
+## Authors
 * Kamil Sendecki
 
-##License
+## License
 This project is licensed under the MIT License - see the LICENSE.md file for details
